@@ -29,6 +29,7 @@ const showOneSurveyFailure = () => {
 }
 
 const showAllSurveysSuccess = (response) => {
+  accumSurveyAnswers(response)
   $('.reset').trigger('reset')
 }
 
@@ -37,7 +38,7 @@ const showAllSurveysFailure = () => {
 }
 
 const newSurveySuccess = (data) => {
-  store.log = data.lo
+  store.survey = data.survey
   $('.reset').trigger('reset')
 }
 
@@ -46,7 +47,7 @@ const newSurveyFailure = () => {
 }
 
 const updateSurveySuccess = (data) => {
-  store.log = data.log
+  store.survey = data.survey
   $('.reset').trigger('reset')
 }
 
@@ -60,6 +61,19 @@ const destroySurveySuccess = () => {
 
 const destroySurveyFailure = () => {
   $('.reset').trigger('reset')
+}
+
+const accumSurveyAnswers = (response) => {
+  let totalYes = 0
+  let totalNo = 0
+  for (let i = 0; i < response.surveys.length; i++) {
+    if (response.surveys[i].responses.answer === 'yes') {
+      totalYes++
+    } else if (response.surveys[i].responses.answer === 'no') {
+      totalNo++
+    }
+    return [totalYes, totalNo]
+  }
 }
 
 // const successAlert = () => {

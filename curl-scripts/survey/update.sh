@@ -5,9 +5,7 @@ curl "http://localhost:4741/surveys/${ID}" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "survey": {
-      "": "'"${}"'",
-      "": "'"${}"'",
-      "": "'"${}"'"
+      "question": "'"${Q}"'"
     }
   }'
 
