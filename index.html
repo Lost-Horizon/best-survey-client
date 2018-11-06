@@ -59,16 +59,16 @@
     </div>
   </section>
   <!--/////////////////////////////////// NAV BAR /////////////////////////////////////////////////////////////////////////////-->
-  <div id="navbar" class="navbar navbar-expand-lg navbar-light" style="background: #1161ee; height: 80px; font-weight: bold">
+  <div id="navbar" class="navbar navbar-expand-lg navbar-light hidden" style="background: #1161ee; height: 80px; font-weight: bold">
     <a href="#home-menu" id="">HOME</a>
     <a href="#">SEE ALL SURVEYS</a>
     <a href="#create-survey-section">CREATE SURVEY</a>
     <a href="#change-password-section">CHANGE PASSWORD</a>
-    <a id=""><button class="btn btn-danger">SIGN OUT</button></a>
+    <a id="sign-out"><button class="btn btn-danger">SIGN OUT</button></a>
   </div>
 
   <!--////////////////////////////////////Home Menu////////////////////////////////////////////////////////////////////////////-->
-  <section class="home-menu" id="home-menu">
+  <section class="home-menu hidden" id="home-menu">
     <div class="fancy jumbotron">
       <h3 class=""> Know your audience </h3>
 
@@ -82,20 +82,20 @@
 
   <!--/////////////////////////////////////Change Password Form///////////////////////////////////////////////////////////////////////////-->
 
-  <section class="change-password-section" id="change-password-section">
+  <section class="change-password-section hidden" id="change-password-section">
     <div class="change-password-div jumbotron">
       <form id="change-password-form">
         <fieldset>
           <legend> Change Password? </legend>
           <input placeholder="Enter your old password" name="passwords[old]" class="form-control" style="width: 300px"
-            type="email" />
+            type="password" />
           <input placeholder="Enter your new password" name="passwords[new]" class="form-control" style="width: 300px"
             type="password" />
           <br />
-          <input type="submit" class='theButton btn btn-primary' value="Log In !" />
+          <input type="submit" class='theButton btn btn-primary' value="Change Password!" />
         </fieldset>
       </form>
-      <h3 id="display-log-in-message">
+      <h3 id="change-password-message">
         <!--Status shall be displayed here-->
       </h3>
     </div>
@@ -147,7 +147,7 @@
 
   <!--///////////////////////////CREATE SURVEY////////////////////////////////////////////-->
   <section class="create-survey-section" id="create-survey-section" style="display: block">
-    <div class="create-survey-div jumbotron">
+    <div class="create-survey-div jumbotron hidden">
       <div>
         <h3>What Question will your survey ask?</h3>
       </div>
