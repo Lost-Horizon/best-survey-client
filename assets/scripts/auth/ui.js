@@ -26,7 +26,7 @@ const signInSuccess = (response) => {
   $('.home-menu').removeClass('hidden')
   $('.change-password-section').removeClass('hidden')
   $('.create-survey-div').removeClass('hidden')
-  $('#change-password-message').html('')
+  // $('#change-password-message').html('')
 }
 
 const signInFailure = () => {
