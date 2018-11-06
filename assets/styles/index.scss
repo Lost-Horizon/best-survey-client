@@ -1,5 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 
+.hidden {
+  display: none;
+}
+
 .sign-up-div {
   float: left;
   clear: both;
@@ -24,8 +28,9 @@
 }
 
 .sign-up-log-in {
-  display: none;
+  // display: none;
 }
+
 
 //////////////////////////////// NAV BAR ////////////////////////////////////////////////////////////////////////////////-->
 
