@@ -35,7 +35,7 @@
 }
 
 .sign-up-log-in {
-  // display: none;
+  display: none;
 }
 
 //////////////////////////////// NAV BAR ////////////////////////////////////////////////////////////////////////////////-->
@@ -86,6 +86,7 @@
 .home-menu {
   height: 100vh;
   background: url(https://images.pexels.com/photos/7100/iphone-desk-laptop-notebook.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)center no-repeat;
+  background-attachment: fixed; // this line of code makes the parallax effect
   //  display: none;
 }
 
