@@ -22,9 +22,16 @@
 }
 
 .sign-in-and-out {
-  margin-top: 30px;
+  margin-top: 0px;
   display: inline-block;
   height: 100vh;
+  background: url(https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)center no-repeat;
+
+}
+
+.sign-up-log-in .jumbotron {
+  background: rgba(204, 204, 204, 0.8);
+  margin-top: 30px;
 }
 
 .sign-up-log-in {
@@ -34,13 +41,11 @@
 //////////////////////////////// NAV BAR ////////////////////////////////////////////////////////////////////////////////-->
 
 #navbar {
-  font-family: 'Libre Baskerville';
+  // font-family: 'Libre Baskerville';
   overflow: hidden;
   background-color: #333;
   //background: linear-gradient(blue, #333);
-
   z-index: 3000;
-
 }
 
 #navbar a {
@@ -79,16 +84,21 @@
 
 ////////////////////////////HOME SECTION////////////////////////////////////////////////////////
 .home-menu {
-  margin: 5%;
   height: 100vh;
-  //display: none;
+  background: url(https://images.pexels.com/photos/7100/iphone-desk-laptop-notebook.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)center no-repeat;
+  //  display: none;
+}
+
+.home-menu .jumbotron {
+  background: rgba(204, 204, 204, 0.7);
+  margin: 100px 10%;
 }
 
 
 ///////////////////////////CHANGE PASSWORD SECTION/////////////////////////////////////////////////////////
 
 .change-password-section {
-  height: 100vh;
+  height: 70vh;
   margin: 5%
 }
 
