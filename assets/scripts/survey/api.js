@@ -31,8 +31,18 @@ const showOneSurvey = (surveyData) => {
   //   method: 'GET',
   //   headers: {
   //     Authorization: `Token token=${store.user.token}`
-    // }
+  // }
   // })
+}
+
+const showOwnerSurveys = () => {
+  return $.ajax({
+    url: config.apiUrl + `/surveys`,
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
 }
 
 const updateSurvey = (surveyData, surveyId) => {
@@ -63,6 +73,7 @@ module.exports = {
   newSurvey,
   showAllSurveys,
   showOneSurvey,
+  showOwnerSurveys,
   updateSurvey,
   destroySurvey
 }
