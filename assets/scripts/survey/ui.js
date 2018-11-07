@@ -45,16 +45,19 @@ const destroySurveyFailure = () => {
   $('.reset').trigger('reset')
 }
 
-const accumSurveyAnswers = (response) => {
+const accumSurveyAnswers = (surveyData) => {
   let totalYes = 0
   let totalNo = 0
-  for (let i = 0; i < response.surveys.length; i++) {
-    if (response.surveys[i].responses.answer === 'yes') {
+  for (let i = 0; i < surveyData.surveys.responses.length; i++) {
+    if (surveyData.surveys.responses[i].answer === 'yes') {
       totalYes++
-    } else if (response.surveys[i].responses.answer === 'no') {
+    } else if (surveyData.surveys.responses[i].answer === 'no') {
       totalNo++
     }
-    return [totalYes, totalNo]
+    return {
+      totalYes: totalYes,
+      totalNo: totalNo
+    }
   }
 }
 
