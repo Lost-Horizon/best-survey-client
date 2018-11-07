@@ -21,5 +21,8 @@ $(() => {
   $('#update-survey-form').on('submit', surveyEvents.onUpdateSurvey)
   $('#delete-survey-button').on('submit', surveyEvents.onDestroySurvey)
   $('#show-survey-button').on('submit', surveyEvents.onShowOneSurvey)
-  $('#show-all-survey-button').on('submit', surveyEvents.onShowAllSurvey)
+  $('#show-all-surveys').on('click', surveyEvents.onShowAllSurveys)
+
+  $('#see-all-surveys-section').on('click', '#true-button', surveyEvents.onUpdateSurvey)
+  $('#see-all-surveys-section').on('click', '#false-button', surveyEvents.onUpdateSurvey)
 })

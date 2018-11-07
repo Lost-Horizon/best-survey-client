@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
-
+const showSurveysTemplate = require('../templates/surveys.handlebars')
 
 window.onscroll = function () {
   myFunction()
@@ -28,8 +28,10 @@ const showOneSurveyFailure = () => {
   $('.reset').trigger('reset')
 }
 
-const showAllSurveysSuccess = (response) => {
+const showAllSurveysSuccess = (data) => {
   $('.reset').trigger('reset')
+  const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
+  $('.survey-component').html(showSurveysHtml)
 }
 
 const showAllSurveysFailure = () => {
@@ -46,7 +48,8 @@ const newSurveyFailure = () => {
 }
 
 const updateSurveySuccess = (data) => {
-  store.log = data.log
+  // store.survey = data.survey
+  console.log(data)
   $('.reset').trigger('reset')
 }
 

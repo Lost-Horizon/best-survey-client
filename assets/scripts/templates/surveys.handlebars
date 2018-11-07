@@ -1,27 +1,14 @@
-{{#each logs as |log|}}
-
-<div class="card text-center">
+{{#each surveys as |survey|}}
+<section>
+  <div class="card text-center">
     <div class="card-header">
-        <h5 data-id="{{log.id}}">{{log.date}}</h5>
+      <h5 data-id="{{survey._id}}">{{survey.question}}</h5>
     </div>
-    <div class="card-body">
-        <section data-id="{{log.id}}">
-            <p>{{#if log.feet}}
-                Feet: {{log.feet}}
-                {{else}}
-                No log provided.
-                {{/if}}
-            </p>
-            <p>{{#if log.activity}}
-                Activity: {{log.activity}}
-                {{else}}
-                No activity provided.
-                {{/if}}
-            </p>
-            <button id="deleteButton" class="fas fa-trash-alt" aria-hidden="true" type="submit"></button>
-            <button id="updateButton" class="fas fa-edit" aria-hidden="true" data-toggle="modal" data-target="#modalUpdateLogForm"></button>
-        </section>
+    <div>
+      <button data-id="{{survey._id}}" id="true-button" class="btn btn-success" type="submit">True</button>
+      <button data-id="{{survey._id}}" id="false-button" class="btn btn-danger"  >False</button>
     </div>
-</div>
+  </div>
+</section>
 
 {{/each}}
