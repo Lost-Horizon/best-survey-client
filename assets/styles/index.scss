@@ -99,7 +99,7 @@
 ///////////////////////////CHANGE PASSWORD SECTION/////////////////////////////////////////////////////////
 
 .change-password-section {
-  height: 70vh;
+  height: 20vh;
   margin: 5%
 }
 
@@ -143,14 +143,15 @@
 //////////////////////CREATE SURVEY SECTION////////////////////////////////////////
 
 #create-survey-section {
-  height: 80vh;
-  background: url(https://images.pexels.com/photos/273222/pexels-photo-273222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)center no-repeat
+  height: 110vh;
+  background: url(https://images.pexels.com/photos/891059/pexels-photo-891059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)center no-repeat;
+  background-attachment: fixed; // this line of code makes the parallax effect
 }
 
 
 #create-survey-section .jumbotron {
-  background: rgba(204, 204, 204, 0.3);
-  margin: 100px 5%;
+  background: rgba(204, 204, 204, 0.7);
+  margin: 20% 5%;
 }
 
 .notes {
