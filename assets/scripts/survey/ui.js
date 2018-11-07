@@ -44,6 +44,14 @@ const showAllSurveysFailure = () => {
   $('#display-survey-message').css('red')
 }
 
+const showOwnerSurveysSuccess = () => {
+
+}
+
+const showOwnerSurveysFailure = () => {
+
+}
+
 const newSurveySuccess = (data) => {
   store.log = data.lo
   $('.reset').trigger('reset')
@@ -102,6 +110,8 @@ module.exports = {
   showOneSurveyFailure,
   showAllSurveysSuccess,
   showAllSurveysFailure,
+  showOwnerSurveysSuccess,
+  showOwnerSurveysFailure,
   newSurveySuccess,
   newSurveyFailure,
   updateSurveySuccess,

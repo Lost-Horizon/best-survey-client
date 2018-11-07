@@ -1,19 +1,13 @@
 {{#each surveys as |survey|}}
-  <div>
     <div class="card-header">
       <h5 data-id="{{survey._id}}">{{survey.question}}</h5>
     </div>
     <div>
       <button data-id="{{survey._id}}" id="true-button" class="btn btn-success" type="submit">True</button>
-      <button data-id="{{survey._id}}" id="false-button" class="btn btn-dark">False</button>
+      <button data-id="{{survey._id}}" id="false-button" class="btn btn-danger"  type="submit">False</button>
       <button class="btn btn-danger delete-survey" id="delete-button">Delete</button>
     </div>
-    <div class="survey-responses">
-      {{#each this}}
-        {{#survey.responses}}
-          <p>{{answer}}</p>
-        {{/survey.responses}}
-      {{/each}}
-    </div>
   </div>
+</section>
+
 {{/each}}
