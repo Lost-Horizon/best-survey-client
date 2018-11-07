@@ -142,8 +142,15 @@
 
 //////////////////////CREATE SURVEY SECTION////////////////////////////////////////
 
-.create-survey-section {
-  margin: 5%
+#create-survey-section {
+  height: 80vh;
+  background: url(https://images.pexels.com/photos/273222/pexels-photo-273222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)center no-repeat
+}
+
+
+#create-survey-section .jumbotron {
+  background: rgba(204, 204, 204, 0.3);
+  margin: 100px 5%;
 }
 
 .notes {
