@@ -31,10 +31,10 @@ const onShowOneSurvey = (event) => {
 }
 
 const onShowOwnerSurveys = (event) => {
-  event.preventDefault()
-  api.showOwnerSurveys()
-    .then(ui.showOwnerSurveysSuccess)
-    .catch(ui.showOwnerSurveysFailure)
+  // event.preventDefault()
+  // api.showOwnerSurveys()
+  //   .then(ui.showOwnerSurveysSuccess)
+  //   .catch(ui.showOwnerSurveysFailure)
 }
 
 const onUpdateSurvey = (event) => {
