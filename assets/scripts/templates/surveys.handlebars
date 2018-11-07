@@ -1,4 +1,5 @@
 {{#each surveys as |survey|}}
+  {{log this}}
   <div>
     <div class="card-header">
       <h5 data-id="{{survey._id}}">{{survey.question}}</h5>
@@ -8,10 +9,9 @@
       <button data-id="{{survey._id}}" id="false-button" class="btn btn-danger">False</button>
     </div>
     <div class="survey-responses">
-      {{#each survey.responses}}
-        {{#survey.responses}}
-          <p>{{answer}}</p>
-        {{/survey.responses}}
+      {{#each survey.responses as |response|}}
+      {{log this}}
+          {{response.answer}}
       {{/each}}
     </div>
   </div>
