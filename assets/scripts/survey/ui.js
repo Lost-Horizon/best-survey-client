@@ -33,6 +33,7 @@ const showOneSurveyFailure = () => {
 }
 
 const showAllSurveysSuccess = (data) => {
+  console.log('the data is: ', data)
   $('.reset').trigger('reset')
   const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
   $('.survey-component').html(showSurveysHtml)

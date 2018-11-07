@@ -18,6 +18,7 @@ const onShowAllSurveys = (event) => {
   event.preventDefault()
   console.log('you made it!')
   api.showAllSurveys()
+    .then(console.log(event.surveys))
     .then(ui.showAllSurveysSuccess)
     .catch(ui.showAllSurveysFailure)
 }
@@ -36,7 +37,7 @@ const onUpdateSurvey = (event) => {
   console.log(event.target)
   if (event.target.id === 'true-button') {
     console.log('selected true')
-  } else {
+  } else if (event.target.id === 'false-button') {
     console.log('selected false')
   }
 
@@ -46,7 +47,7 @@ const onUpdateSurvey = (event) => {
   console.log('in events.js', surveyId)
   const surveyData = {
     survey: {
-      responses: [{answer: 'true'}]
+      responses: [{answer: event.target.value}]
     }
   }
   console.log(surveyData)
