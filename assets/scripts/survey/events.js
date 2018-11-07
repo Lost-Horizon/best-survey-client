@@ -16,6 +16,7 @@ const onNewSurvey = (event) => {
 
 const onShowAllSurveys = (event) => {
   event.preventDefault()
+  console.log('you made it!')
   api.showAllSurveys()
     .then(ui.showAllSurveysSuccess)
     .catch(ui.showAllSurveysFailure)
@@ -30,9 +31,26 @@ const onShowOneSurvey = (event) => {
 }
 
 const onUpdateSurvey = (event) => {
+  console.log(event)
   event.preventDefault()
-  const surveyData = getFormFields(event.target)
-  api.updateSurvey(surveyData)
+  console.log(event.target)
+  if (event.target.id === 'true-button') {
+    console.log('selected true')
+  } else {
+    console.log('selected false')
+  }
+
+  const surveyId = event.target.dataset.id
+  // const surveyId = event.target['dataset.id']
+
+  console.log('in events.js', surveyId)
+  const surveyData = {
+    survey: {
+      responses: [{answer: 'true'}]
+    }
+  }
+  console.log(surveyData)
+  api.updateSurvey(surveyData, surveyId)
     .then(ui.updateSurveySuccess)
     .catch(ui.updateSurveyFailure)
 }
