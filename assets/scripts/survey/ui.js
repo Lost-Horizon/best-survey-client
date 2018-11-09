@@ -27,7 +27,6 @@ $(() => {
   $('.div-for-create-survey-message-fail').hide()
 })
 
-
 ////////////////////////////////////////////////////////////////////
 
 // const showOneSurveySuccess = (response) => {

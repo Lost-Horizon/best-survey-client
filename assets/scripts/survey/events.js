@@ -42,7 +42,9 @@ const onUpdateSurvey = (event) => {
 
   const surveyData = {
     survey: {
-      responses: [{answer: event.target.value}]
+      responses: [{
+        answer: event.target.value
+      }]
     }
   }
   api.updateSurvey(surveyData, surveyId)
