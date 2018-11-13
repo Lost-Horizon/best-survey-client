@@ -15,6 +15,7 @@ const newSurvey = (surveyData) => {
 }
 
 const showAllSurveys = () => {
+
   return $.ajax({
     url: config.apiUrl + `/surveys`,
     method: 'GET',
@@ -30,6 +31,7 @@ const showOneSurvey = (surveyData) => {
 
 const updateSurvey = (surveyData, surveyId) => {
   // const surveyId = surveyData.survey._id
+
   return $.ajax({
     url: config.apiUrl + `/surveys/${surveyId}`,
     method: 'PATCH',

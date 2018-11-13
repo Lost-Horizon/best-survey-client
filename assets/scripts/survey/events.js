@@ -21,7 +21,9 @@ const onShowAllSurveys = (event) => {
 }
 
 const onShowAllSurveysButStay = (event) => {
-  // event.preventDefault()
+  //event.preventDefault()
+  // console.log('The event I am looking for is ' + event)
+
   api.showAllSurveys()
     .then(ui.showAllSurveysSuccessButStay)
     .catch(ui.showAllSurveysFailure)
@@ -47,6 +49,7 @@ const onUpdateSurvey = (event) => {
       }]
     }
   }
+
   api.updateSurvey(surveyData, surveyId)
     .then(ui.updateSurveySuccess)
     .then(onShowAllSurveysButStay)
@@ -73,6 +76,8 @@ const onShowMySurveys = (event) => {
   event.preventDefault()
   ui.showMySurveys()
 }
+
+
 
 module.exports = {
   onNewSurvey,

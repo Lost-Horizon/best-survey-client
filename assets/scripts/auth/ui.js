@@ -7,6 +7,8 @@ $(() => {
   $('.div-for-password-message').hide() // Alfredo says: this hides the success animation (by default)
   $('.div-for-create-survey-message').hide() // Alfredo Says: this hides the success animation (by default)
   $('.div-for-password-message-fail').hide()
+  $('.survey-instructions').hide()
+
   // $('#create-survey-section').hide()
 })
 
@@ -31,9 +33,6 @@ const signUpFailure = () => {
 const signInSuccess = (response) => {
   store.user = response.user
   clearForms()
-  // $('#display-log-in-message').html('Sign in successful')
-  // $('#display-log-in-message').css('color', 'green')
-  // $('#create-survey-section').show()
   $('#sign-in-form').trigger('reset')
   $('.sign-up-log-in').addClass('hidden')
   $('#sign-up-form').addClass('hidden')
@@ -41,15 +40,14 @@ const signInSuccess = (response) => {
   $('.navbar').removeClass('hidden')
   $('.home-menu').removeClass('hidden')
   $('.change-password-section').removeClass('hidden')
-  // $('.create-survey-div').removeClass('hidden')
   $('#create-survey-section').removeClass('hidden')
-
   $('.see-all-surveys-section').removeClass('hidden')
-  $('.see-my-surveys-section').removeClass('hidden')
+  // $('.see-my-surveys-section').removeClass('hidden')
+  $('.see-my-surveys-section').show(); // Alfredo added this in lieu of the previous line
   $('#display-sign-up-message').html('')
-
+  $('.survey-instructions').show()
+  $('#see-all-surveys-section').show(); // Alfredo added this line
   surveyEvents.onShowAllSurveys()
-  // $('#change-password-message').html('')
 }
 
 const signInFailure = () => {
@@ -63,10 +61,6 @@ const signInFailure = () => {
 const passwordChangeSuccess = () => {
   $('.div-for-password-message').show()
   $('.div-for-password-message').fadeOut(4000)
-  //$('#display-survey-message').html('Change Password successful')
-  //$('#display-survey-message').css('color', 'green')
-  // $('#change-password-form').trigger('reset')
-  // $('#change-password-form').addClass('hidden') // Alfredo says: this line was previously commented out. I commented out the others.
   clearForms()
 }
 
@@ -74,17 +68,12 @@ const passwordChangeFailure = () => {
   clearForms()
   $('#change-password-form').trigger('reset')
   $('.div-for-password-message-fail').show()
-  // clearForms()
-  // $('#display-survey-message').html('Change Password failed, try again')
-  // $('#display-survey-message').css('color', 'red')
   $('.div-for-password-message-fail').show()
   $('.div-for-password-message-fail').fadeOut(4000)
 }
 
 const signOutSuccess = () => {
   clearForms()
-  // $('#display-log-in-message').html('Sign Out successful')
-  // $('#display-log-in-message').css('color', 'green')
   $('.sign-up-log-in').removeClass('hidden')
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
@@ -92,13 +81,14 @@ const signOutSuccess = () => {
   $('.home-menu').addClass('hidden')
   $('.change-password-section').addClass('hidden')
   $('#create-survey-section').addClass('hidden')
-  // $('.create-survey-div').addClass('hidden')
-
-  $('.see-all-surveys-section').addClass('hidden')
+  // $('.see-all-surveys-section').addClass('hidden')
+  $('.see-all-surveys-section').hide()
   $('.see-my-surveys-section').addClass('hidden')
   $('#display-log-in-message').html('')
   // $('#change-password-message').html('')
-  $('#navbar-at-sign-up').show(); // ALFREDO ADDED THIS. KEEP
+  $('#navbar-at-sign-up').show();
+  $('.survey-instructions').hide()
+
 }
 
 const signOutFailure = () => {
