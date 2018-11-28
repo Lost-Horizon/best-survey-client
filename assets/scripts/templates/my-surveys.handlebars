@@ -1,23 +1,60 @@
-<h2>My Surveys</h2>
+<h2 style="margin-left: 15px;">My Surveys</h2>
 {{#unless surveys}}
-  <p>no surveys yet!</p>
+<p>No surveys yet!</p>
 {{/unless}}
 {{#each surveys as |survey|}}
-  <div>
-    <div class="card-header">
-      <h5 data-id="{{survey._id}}">{{survey.question}}</h5>
-      <button data-id="{{survey._id}}" id="delete-button" class="btn btn-outline-danger">Delete</button>
+<section style="margin-left: 15px;">
+  <div class="card-header" style="display: inline-block; width: 40vw">
+    <h5 data-id="{{survey._id}}">{{survey.question}}</h5>
+    <button data-id="{{survey._id}}" id="delete-button" class="btn btn-outline-danger">Delete</button>
+    {{!-- Alfredo says: I just added this button (on the next line) for the modal to appear --}}
+    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal">Edit Survey
+      Question</button>
+  </div>
+  <div class="survey-responses" style="display: inline-block">
+    Responses to this survey:
+    {{#unless survey.responses}}
+    <p>no responses yet!</p>
+    {{/unless}}
+    {{#each survey.responses as |response|}}
+    <div class="">
+      {{this.0.answer}}
     </div>
-    <div class="survey-responses">
-      <p>responses:</p>
-      {{#unless survey.responses}}
-        <p>no responses yet!</p>
-      {{/unless}}
-      {{#each survey.responses as |response|}}
-        <div class="">
-          {{this.0.answer}}
+    {{/each}}
+  </div>
+  <br />
+</section>
+<br />
+
+
+{{!-- Alfredo says: I added this button for the edit form to show up --}}
+<section class="update-survey-section" style="margin-left: 10px">
+  {{!--
+  <!-- Modal --> --}}
+  <div class="modal fade" id="myModal" role="dialog" style="margin-top: 15%">
+    <div class="modal-dialog">
+      {{!--
+      <!-- Modal content--> --}}
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Update Survey Question?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
         </div>
-      {{/each}}
+        <div class="modal-body">
+          <form data-id="{{survey._id}}" class="update-example-form">
+            <textarea name="survey[question]" id="" cols="30" rows="10" class="notes" placeholder="Edit Question"></textarea>
+            <button type="submit" class="btn btn-primary" data-dismiss="modal" style="margin-bottom: 1%;">Submit your
+              edit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+
     </div>
   </div>
+
+</section>
 {{/each}}

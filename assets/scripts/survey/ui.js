@@ -27,20 +27,7 @@ $(() => {
   $('.div-for-create-survey-message-fail').hide()
 })
 
-
 ////////////////////////////////////////////////////////////////////
-
-// const showOneSurveySuccess = (response) => {
-//   $('.reset').trigger('reset')
-//   $('#display-survey-message').html('Survey displayed')
-//   $('#display-survey-message').css('green')
-// }
-//
-// const showOneSurveyFailure = () => {
-//   $('.reset').trigger('reset')
-//   $('#display-survey-message').html('Something went wrong, please try again')
-//   $('#display-survey-message').css('red')
-// }
 
 const showAllSurveysSuccess = (data) => {
   const allSurveys = data
@@ -48,6 +35,7 @@ const showAllSurveysSuccess = (data) => {
 
   const allMySurveys = allSurveys.surveys.filter(function (survey) {
     return survey.owner === userId
+
   })
 
   store.mySurveys = allMySurveys
@@ -60,12 +48,12 @@ const showAllSurveysSuccess = (data) => {
   $('.my-surveys-component').addClass('hidden')
   $('.survey-component').removeClass('hidden')
   $('.survey-component').html(showSurveysHtml)
-
-  // $('#display-survey-message').html('All surveys shown')
   $('#display-survey-message').css('black')
-  $('html, body').animate({
-    scrollTop: ($('#see-all-surveys-section').offset().top)
-  }, 500)
+
+  // Alfredo says: I comment out so the user can see the home page (with the option it offer) instead of scrolling involuntarily 
+  // $('html, body').animate({
+  //   scrollTop: ($('#see-all-surveys-section').offset().top)
+  // }, 500)
 }
 
 const showAllSurveysSuccessButStay = (data) => {
@@ -83,11 +71,9 @@ const showAllSurveysSuccessButStay = (data) => {
     surveys: data.surveys
   })
 
-  $('.my-surveys-component').addClass('hidden')
+  // $('.my-surveys-component').addClass('hidden') //Alfredo
   $('.survey-component').removeClass('hidden')
   $('.survey-component').html(showSurveysHtml)
-
-  // $('#display-survey-message').html('All surveys shown')
   $('#display-survey-message').css('black')
 }
 
@@ -97,16 +83,13 @@ const showMySurveys = () => {
     surveys: store.mySurveys
   })
   $('.my-surveys-component').removeClass('hidden')
-  $('.survey-component').addClass('hidden')
+  // $('.survey-component').addClass('hidden') //
   $('.my-surveys-component').html(showMySurveysHtml)
-
-  //$('#display-survey-message').html('User created surveys shown')
   $('#display-survey-message').css('black')
   $('html, body').animate({
     scrollTop: ($('#see-my-surveys-section').offset().top)
   }, 500)
 }
-
 
 const showAllSurveysFailure = () => {
   $('.reset').trigger('reset')
@@ -119,39 +102,30 @@ const newSurveySuccess = (data) => {
   $('.div-for-create-survey-message').fadeIn(100)
   $('.div-for-create-survey-message').fadeOut(4000)
   $('#new-survey-form').trigger('reset')
-  // $('#display-survey-message').html('Survey created')
-  // $('#display-survey-message').css('green')
-  // showAllSurveysEvent.onShowAllSurveys()
 }
 
 const newSurveyFailure = () => {
   $('.div-for-create-survey-message-fail').fadeIn(100)
-  $('.div-for-create-survey-message-fail').fadeIn(4000)
-
+  $('.div-for-create-survey-message-fail').fadeOut(4000)
   $('.reset').trigger('reset')
-  $('#display-survey-message').html('Something went wrong, try again')
-  $('#display-survey-message').css('black')
+  // $('#display-survey-message').html('Something went wrong, try again')
+  // $('#display-survey-message').css('black')
 }
 
-const updateSurveySuccess = (data) => {
-  $('.reset').trigger('reset')
+const updateSurveySuccess = () => {
+
 }
 
 const updateSurveyFailure = () => {
   $('.reset').trigger('reset')
-  // $('#display-survey-message').html('Something went wrong, please try again')
-  // $('#display-survey-message').css('red')
 }
 
 const deleteSurveySuccess = () => {
   $('.reset').trigger('reset')
-  // $('#display-survey-message').html('Survey removed')
-  // $('#display-survey-message').css('green')
 }
 
 const deleteSurveyFailure = () => {
   $('.reset').trigger('reset')
-
 }
 
 
