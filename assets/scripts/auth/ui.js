@@ -84,11 +84,11 @@ const signOutSuccess = () => {
   // $('.see-all-surveys-section').addClass('hidden')
   $('.see-all-surveys-section').hide()
   $('.see-my-surveys-section').addClass('hidden')
+  $('#see-my-surveys-section').hide();
   $('#display-log-in-message').html('')
   // $('#change-password-message').html('')
   $('#navbar-at-sign-up').show();
-  $('.survey-instructions').hide()
-
+  $('.survey-instructions').hide();
 }
 
 const signOutFailure = () => {
